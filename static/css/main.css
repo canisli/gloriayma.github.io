@@ -3,6 +3,7 @@ body {
   font-family: system-ui, sans-serif;
   background: #fffdf8;
   color: #2d2926;
+  position: relative;
 }
 
 /* shared links */
@@ -37,8 +38,12 @@ a {
 .staff-button {
   background: none;
   border: none;
-  cursor: url('/images/cursor_note.png') 16 16, auto;
+  cursor: url('/images/cursor_note.png') 15 0, auto;
   padding: 0;
+}
+
+.music-player {
+  margin-top: 3rem;
 }
 
 .staff {

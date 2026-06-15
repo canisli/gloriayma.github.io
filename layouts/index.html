@@ -30,19 +30,16 @@
   const audio = document.getElementById('bg-music');
 
   toggle.addEventListener('click', (e) => {
-    if (audio.paused) {
-      audio.play();
-      const note = document.createElement('img');
-      note.src = '/images/cursor_note.png';
-      note.style.position = 'fixed';
-      note.style.left = (e.clientX - 16) + 'px';
-      note.style.top = (e.clientY - 16) + 'px';
-      note.style.width = '32px';
-      note.style.pointerEvents = 'none';
-      document.body.appendChild(note);
-    } else {
-      audio.pause();
-    }
+    audio.paused ? audio.play() : audio.pause();
+
+    const note = document.createElement('img');
+    note.src = '/images/cursor_note.png';
+    note.style.position = 'absolute';
+    note.style.left = (e.pageX - 22) + 'px';
+    note.style.top = (e.pageY - 10) + 'px';
+    note.style.width = '30px';
+    note.style.pointerEvents = 'none';
+    document.body.appendChild(note);
   });
 </script>
 {{ end }}
