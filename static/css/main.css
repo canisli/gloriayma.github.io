@@ -1,0 +1,54 @@
+/* global defaults */
+body {
+  font-family: system-ui, sans-serif;
+  background: #fffdf8;
+  color: #2d2926;
+}
+
+/* shared links */
+a {
+  color: inherit;
+}
+
+/* homepage */
+.home {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.picture {
+  width: 200px;
+  margin-left: -20px
+}
+
+
+.home-intro {
+  font-size: 1.35rem;
+  line-height: 1.6;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* music player */
+.staff-button {
+  background: none;
+  border: none;
+  cursor: url('/images/cursor_note.png') 16 16, auto;
+  padding: 0;
+}
+
+.staff {
+  display: block;
+  width: 600px
+}
+
+/* normal pages */
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem;
+}

@@ -1,0 +1,49 @@
+{{ define "main" }}
+<main class="home">
+  <section class="card">
+    <img class="picture" src="/images/flying_goose.png" alt="Goose flying away">
+    <h1>{{ .Title }}</h1>
+
+    <p class="blurb">{{ .Description }}</p>
+
+    <nav class="buttons" aria-label="Main links">
+      <!-- <a href="/research/">research</a>
+      <a href="/garden/">garden</a> -->
+      <a href="/blog/">blog</a>
+      <!-- <a href="/cv.pdf">cv</a>
+      <a href="https://github.com/gloriama2007">github</a>
+      <a href="/secret/">secret</a> -->
+    </nav>
+
+    <div class="music-player">
+      <button class="staff-button" id="music-toggle" aria-label="Toggle music">
+        <img class="staff" src="/images/staff.png" alt="musical staff">
+      </button>
+      <audio id="bg-music" loop>
+        <source src="/audio/laplusquelente.m4a" type="audio/mp4">
+      </audio>
+    </div>
+  </section>
+</main>
+
+<script>
+  const toggle = document.getElementById('music-toggle');
+  const audio = document.getElementById('bg-music');
+
+  toggle.addEventListener('click', (e) => {
+    if (audio.paused) {
+      audio.play();
+      const note = document.createElement('img');
+      note.src = '/images/cursor_note.png';
+      note.style.position = 'fixed';
+      note.style.left = (e.clientX - 16) + 'px';
+      note.style.top = (e.clientY - 16) + 'px';
+      note.style.width = '32px';
+      note.style.pointerEvents = 'none';
+      document.body.appendChild(note);
+    } else {
+      audio.pause();
+    }
+  });
+</script>
+{{ end }}
