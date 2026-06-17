@@ -38,7 +38,7 @@ a {
 .staff-button {
   background: none;
   border: none;
-  cursor: url('/images/cursor_note.png') 15 0, auto;
+  cursor: none;
   display: block;
   padding: 0;
   position: relative;
@@ -55,11 +55,17 @@ a {
   width: 100%;
 }
 
-.staff-note {
+.staff-note,
+.staff-cursor {
   position: absolute;
   pointer-events: none;
   transform: translate(-50%, -50%);
   width: 5%;
+}
+
+.staff-cursor {
+  display: none;
+  z-index: 1;
 }
 
 /* normal pages */
