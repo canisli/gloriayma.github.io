@@ -39,7 +39,10 @@ a {
   background: none;
   border: none;
   cursor: url('/images/cursor_note.png') 15 0, auto;
+  display: block;
   padding: 0;
+  position: relative;
+  width: min(100%, 600px);
 }
 
 .music-player {
@@ -48,7 +51,15 @@ a {
 
 .staff {
   display: block;
-  width: 600px
+  height: auto;
+  width: 100%;
+}
+
+.staff-note {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  width: 5%;
 }
 
 /* normal pages */

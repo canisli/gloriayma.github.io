@@ -32,15 +32,13 @@
   toggle.addEventListener('click', (e) => {
     audio.paused ? audio.play() : audio.pause();
 
+    const rect = toggle.getBoundingClientRect();
     const note = document.createElement('img');
     note.src = '/images/cursor_note.png';
-    note.style.position = 'absolute';
-    note.style.left = (e.pageX - 22) + 'px';
-    note.style.top = (e.pageY - 10) + 'px';
-    note.style.width = '30px';
-    note.style.pointerEvents = 'none';
-    document.body.appendChild(note);
+    note.className = 'staff-note';
+    note.style.left = ((e.clientX - rect.left) / rect.width * 100) + '%';
+    note.style.top = ((e.clientY - rect.top) / rect.height * 100) + '%';
+    toggle.appendChild(note);
   });
 </script>
 {{ end }}
-
